@@ -7,7 +7,7 @@ export class Newsitem extends Component {
       <div>
         <div className="card" style={{ width: "18rem" }}>
           <img
-            src="https://cdn.24.co.za/files/Cms/General/d/331/46ea3f6ea3ab49d3b32ab416c2a6c4b1.jpg"
+            src="https://ichef.bbci.co.uk/live-experience/cps/624/cpsprodpb/AF0C/production/_127621844_gettyimages-1244742139.jpg"
             className="card-img-top"
             alt="..."
           />
