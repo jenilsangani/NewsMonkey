@@ -90,6 +90,7 @@ export class News extends Component {
                   title={element.title}
                   discription={element.description}
                   imageUrl={element.urlToImage}
+                  newsUrl={element.newsUrl}
                 />
               </div>
             );
