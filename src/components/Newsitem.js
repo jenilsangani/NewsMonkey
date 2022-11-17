@@ -6,10 +6,10 @@ export class Newsitem extends Component {
     return (
       <div className="my-3">
         <div className="card" style={{ width: "18rem" }}>
-          <img src={imageUrl} className="card-img-top" alt="..." />
+          <img src={!imageUrl?"https://englishtribuneimages.blob.core.windows.net/gallary-content/2022/11/2022_11$largeimg_1522027724.jpg":imageUrl} className="card-img-top" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">{title}...</h5>
-            <p className="card-text">{discription}...</p>
+            <h5 className="card-title">{title}</h5>
+            <p className="card-text">{discription}</p>
             <a href={newsUrl} target="_blank" className="btn btn-sm btn-primary">
               Read More..
             </a>
