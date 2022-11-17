@@ -4,21 +4,18 @@ import Newsitem from "./Newsitem";
 export class News extends Component {
   articles = [
     {
-      source: {
-        id: "news24",
-        name: "News24",
+      "source": {
+      "id": "usa-today",
+      "name": "USA Today"
       },
-      author: "Herman Mostert",
-      title: "Knights quickie earns Proteas Test call-up for Australia series",
-      description:
-        "Cricket South Africa has announced a 16-man Test squad for the Proteas' upcoming tour of Australia.",
-      url: "https://www.news24.com/sport/cricket/proteas/knights-quickie-earns-proteas-test-call-up-for-australia-series-20221114",
-      urlToImage:
-        "https://cdn.24.co.za/files/Cms/General/d/331/46ea3f6ea3ab49d3b32ab416c2a6c4b1.jpg",
-      publishedAt: "2022-11-14T09:54:14+00:00",
-      content:
-        "Cricket South Africa (CSA) on Monday announced a 16-man Test squad for the Proteas' upcoming tour of Australia.\r\nThe Proteas will play three Tests against the Baggy Greens, with the first match sched… [+2948 chars]",
-    },
+      "author": "Zach Kruse",
+      "title": "Packers coach Matt LaFleur explains decisions to cut Amari Rodgers, Kylin Hill - Packers Wire",
+      "description": "The Packers coach discussed the process behind cutting Amari Rodgers and Kylin Hill. One was production-based. The other was a failure of expectations within a role.",
+      "url": "https://packerswire.usatoday.com/2022/11/15/packers-coach-matt-lafleur-explains-decisions-to-cut-amari-rodgers-kylin-hill/",
+      "urlToImage": "https://packerswire.usatoday.com/wp-content/uploads/sites/57/2022/09/105cb9c9f1f2421492af3d47f4983061.jpg?w=1024&h=576&crop=1",
+      "publishedAt": "2022-11-16T00:16:00Z",
+      "content": "The individual decisions to release wide receiver Amari Rodgers and running back Kylin Hill were made because of two separate factors: on-field performance and buying in off the field.\r\nCoach Matt La… [+2281 chars]"
+      },
     {
       source: {
         id: "bbc-sport",
@@ -87,8 +84,8 @@ export class News extends Component {
             return (
               <div className="col-md-3" key={element.url}>
                 <Newsitem
-                  title={element.title}
-                  discription={element.description}
+                  title={element.title.slice(0,45)}
+                  discription={element.description.slice(0,88)}
                   imageUrl={element.urlToImage}
                   newsUrl={element.url}
                 />
