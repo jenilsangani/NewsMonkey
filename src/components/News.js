@@ -5,7 +5,7 @@ export class News extends Component {
   articles = [];
   constructor() {
     super();
-    console.log("hellow i am a constructor from news components");
+    // console.log("hellow i am a constructor from news components");
     this.state = {
       articles: this.articles,
       loading: false,
@@ -14,7 +14,7 @@ export class News extends Component {
   }
 
   async componentDidMount() {
-    console.log("cdm");
+    // console.log("cdm");
     let url =
       "https://newsapi.org/v2/top-headlines?country=in&apiKey=fd0c45153a45406792f95f41b022afc9";
     let data = await fetch(url);
@@ -52,14 +52,14 @@ export class News extends Component {
         <div className="container d-flex justify-content-between">
           <button
             type="button"
-            class="btn btn-dark"
+            className="btn btn-dark"
             onClick={this.handlePreviousClick}
           >
             &larr; Previous
           </button>
           <button
             type="button"
-            class="btn btn-dark"
+            className="btn btn-dark"
             onClick={this.handleNextClick}
           >
             Next &rarr;
