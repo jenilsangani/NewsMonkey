@@ -9,7 +9,7 @@ export class Newsitem extends Component {
           <img
             src={
               !imageUrl
-                ? "https://englishtribuneimages.blob.core.windows.net/gallary-content/2022/11/2022_11$largeimg_1522027724.jpg"
+                ? "https://img.etimg.com/thumb/msid-95591033,width-1070,height-580,imgsize-45264,overlay-etmarkets/photo.jpg"
                 : imageUrl
             }
             className="card-img-top"
