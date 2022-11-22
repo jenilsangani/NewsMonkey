@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Newsitem from "./Newsitem";
+import Spinner from "./spinner";
 
 export class News extends Component {
   articles = [];
@@ -68,52 +69,57 @@ export class News extends Component {
 
   render() {
     return (
-      <div className="container my-3">
-        <h2 className="text-center">NewsMonkey - Top Headlines</h2>
-        <div className="row">
-          {this.state.articles.map((element) => {
-            return (
-              <div className="col-md-3" key={element.url}>
-                <Newsitem
-                  // title={element.title?element.title.slice(0, 45):""}
-                  title={element.title ? element.title : ""}
-                  discription={element.description ? element.description : ""}
-                  imageUrl={element.urlToImage}
-                  newsUrl={element.url}
-                />
-              </div>
-            );
-          })}
+      <>
+        <div className="container my-3">
+          <h2 className="text-center">NewsMonkey - Top Headlines</h2>
+          <Spinner/> {/*spinner component */}
+          <div className="row">
+            {this.state.articles.map((element) => {
+              return (
+                <div className="col-md-3" key={element.url}>
+                  <Newsitem
+                    // title={element.title?element.title.slice(0, 45):""}
+                    title={element.title ? element.title : ""}
+                    discription={element.description ? element.description : ""}
+                    imageUrl={element.urlToImage}
+                    newsUrl={element.url}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div className="container d-flex justify-content-between">
+            {/* Next btn */}
+
+            <button
+              type="button"
+              className="btn btn-dark"
+              onClick={this.handlePreviousClick}
+              disabled={this.state.page <= 1} // disable btn
+            >
+              &larr; Previous
+            </button>
+
+            {/* Previous Btn */}
+
+            <button
+              type="button"
+              className="btn btn-dark"
+              onClick={this.handleNextClick}
+              disabled={
+                this.state.page + 1 >
+                Math.ceil(this.state.totalResults / this.props.pageSize)
+              }
+            >
+              Next &rarr;
+            </button>
+          </div>
         </div>
-        <div className="container d-flex justify-content-between">
-          {/* Next btn */}
-
-          <button
-            type="button"
-            className="btn btn-dark"
-            onClick={this.handlePreviousClick}
-            disabled={this.state.page <= 1} // disable btn
-          >
-            &larr; Previous
-          </button>
-
-          {/* Previous Btn */}
-
-          <button
-            type="button"
-            className="btn btn-dark"
-            onClick={this.handleNextClick}
-            disabled={
-              this.state.page + 1 >
-              Math.ceil(this.state.totalResults / this.props.pageSize)
-            }
-          >
-            Next &rarr;
-          </button>
-        </div>
-      </div>
+      </>
     );
   }
 }
+// console.log(spinner);
+
 
 export default News;
