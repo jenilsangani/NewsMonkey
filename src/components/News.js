@@ -23,7 +23,7 @@ export class News extends Component {
     // console.log("hellow i am a constructor from news components");
     this.state = {
       articles: this.articles,
-      loading: false,
+      loading: true,
       page: 1,
     };
   }
@@ -105,9 +105,14 @@ export class News extends Component {
               return (
                 <div className="col-md-3" key={element.url}>
                   <Newsitem
-                    // title={element.title?element.title.slice(0, 45):""}
-                    title={element.title ? element.title : ""}
-                    discription={element.description ? element.description : ""}
+                    title={element.title ? element.title.slice(0, 45) : ""}
+                    // title={element.title ? element.title : ""}
+                    discription={
+                      element.description
+                        ? element.description.slice(0, 70)
+                        : ""
+                    }
+                    // discription={element.description ? element.description : ""}
                     imageUrl={element.urlToImage}
                     newsUrl={element.url}
                   />
