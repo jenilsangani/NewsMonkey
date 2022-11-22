@@ -98,7 +98,9 @@ export class News extends Component {
     return (
       <>
         <div className="container my-3">
-          <h2 className="text-center">NewsMonkey - Top Headlines</h2>
+          <h2 className="text-center" style={{ margin: "40px" }}>
+            NewsMonkey - Top Headlines
+          </h2>
           {this.state.loading && <Spinner />} {/* spinner component */}
           <div className="row">
             {this.state.articles.map((element) => {
@@ -125,6 +127,7 @@ export class News extends Component {
 
             <button
               type="button"
+              style={{ marginBottom: "40px", marginTop: "40px" }}
               className="btn btn-dark"
               onClick={this.handlePreviousClick}
               disabled={this.state.page <= 1} // disable btn
@@ -136,6 +139,7 @@ export class News extends Component {
 
             <button
               type="button"
+              style={{ marginBottom: "40px", marginTop: "40px" }}
               className="btn btn-dark"
               onClick={this.handleNextClick}
               disabled={
