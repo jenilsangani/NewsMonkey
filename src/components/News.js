@@ -17,7 +17,7 @@ export class News extends Component {
   async componentDidMount() {
     // console.log("cdm");
     let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=fd0c45153a45406792f95f41b022afc9&page=1&pageSize=${this.props.pageSize}`;
-    this.setState({loading:true})
+    this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
     console.log(parsedData);
@@ -77,7 +77,7 @@ export class News extends Component {
       <>
         <div className="container my-3">
           <h2 className="text-center">NewsMonkey - Top Headlines</h2>
-          {this.state.loading && <Spinner />}
+          {this.state.loading && <Spinner />} {/* spinner component */}
           <div className="row">
             {this.state.articles.map((element) => {
               return (
@@ -124,6 +124,6 @@ export class News extends Component {
     );
   }
 }
-// console.log(spinner);
+console.log(Spinner);
 
 export default News;
