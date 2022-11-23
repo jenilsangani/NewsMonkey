@@ -99,12 +99,15 @@ export class News extends Component {
                     // title={element.title ? element.title : ""}
                     discription={
                       element.description
-                        ? element.description.slice(0, 70)
+                        ? element.description.slice(0, 40)
                         : ""
                     }
                     // discription={element.description ? element.description : ""}
                     imageUrl={element.urlToImage}
-                    newsUrl={element.url}
+                    newsUrl={element.url} 
+                    author={element.author}
+                    date={element.publishedAt}
+                    source={element.source.name}
                   />
                 </div>
               );

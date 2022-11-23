@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 export class Navbar extends Component {
   static propTypes = {};
 
-  
-
   render() {
     return (
       <div>
@@ -31,7 +29,7 @@ export class Navbar extends Component {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
+                <li className="nav-item">
                   <Link className="nav-link" to="/general">
                     Home
                   </Link>
@@ -70,18 +68,6 @@ export class Navbar extends Component {
             </div>
           </div>
         </nav>
-        
-        {/* <div>
-          <p style={{
-            fontSize:"50px",
-            textAlign:"center",
-            marginTop:"50px",
-            fontWeight:"700"
-
-            }}>
-              Welcome To NewsMonkey
-          </p>
-        </div> */}
       </div>
     );
   }

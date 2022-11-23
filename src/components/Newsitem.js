@@ -2,14 +2,16 @@ import React, { Component } from "react";
 
 export class Newsitem extends Component {
   render() {
-    let { title, discription, imageUrl, newsUrl } = this.props;
+    let { title, discription, imageUrl, newsUrl,author,date,source } = this.props;
     return (
       <div className="my-3">
         <div className="card">
+        <span class=" translate-middle badge rounded-pill bg-danger" style={{display:'flex', alignSelf:'center', zIndex:'1'}}> {source} </span>
           <img src={ !imageUrl ? "https://img.etimg.com/thumb/msid-95591033,width-1070,height-580,imgsize-45264,overlay-etmarkets/photo.jpg" : imageUrl}className="card-img-top"alt="..."/>
           <div className="card-body">
-            <h5 className="card-title">{title}...</h5>
+            <h5 className="card-title">{title} ...</h5>
             <p className="card-text">{discription} ...</p>
+            <p className="card-text"><small className="text-muted">By {!author?"Unknown":author} on {new Date(date).toGMTString()}</small></p>
             <a
               // rel="noreferre"
               href={newsUrl}
