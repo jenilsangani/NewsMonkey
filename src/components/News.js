@@ -99,7 +99,7 @@ export class News extends Component {
                     // title={element.title ? element.title : ""}
                     discription={
                       element.description
-                        ? element.description.slice(0, 40)
+                        ? element.description.slice(0, 60)
                         : ""
                     }
                     // discription={element.description ? element.description : ""}
