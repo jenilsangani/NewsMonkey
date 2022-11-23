@@ -29,11 +29,11 @@ export class Navbar extends Component {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                {/* <li className="nav-item">
-                  <Link className="nav-link" to="/about">
-                    About
+              <li className="nav-item">
+                  <Link className="nav-link" to="/general">
+                    Home
                   </Link>
-                </li> */}
+                </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/business">
                     Business
@@ -42,11 +42,6 @@ export class Navbar extends Component {
                 <li className="nav-item">
                   <Link className="nav-link" to="/entertainment">
                     Entertainment
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/general">
-                    General
                   </Link>
                 </li>
                 <li className="nav-item">
