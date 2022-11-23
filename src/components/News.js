@@ -51,9 +51,8 @@ export class News extends Component {
       this.props.country
     }&category=${
       this.props.category
-    }&apikey=fd0c45153a45406792f95f41b022afc9&page=${
-      this.state.page - 1
-    }&pageSize=${this.props.pageSize}`;
+    }&apikey=fd0c45153a45406792f95f41b022afc9&page=${this.state.page -
+      1}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -80,9 +79,8 @@ export class News extends Component {
         this.props.country
       }&category=${
         this.props.category
-      }&apikey=fd0c45153a45406792f95f41b022afc9&page=${
-        this.state.page + 1
-      }&pageSize=${this.props.pageSize}`;
+      }&apikey=fd0c45153a45406792f95f41b022afc9&page=${this.state.page +
+        1}&pageSize=${this.props.pageSize}`;
       this.setState({ loading: true });
       let data = await fetch(url);
       let parsedData = await data.json();
