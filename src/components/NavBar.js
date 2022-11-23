@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 export class Navbar extends Component {
   static propTypes = {};
 
+  
+
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
+            <Link className="navbar-brand" to="/home">
               NewsMonkey
             </Link>
             <button
@@ -68,6 +70,18 @@ export class Navbar extends Component {
             </div>
           </div>
         </nav>
+        
+        {/* <div>
+          <p style={{
+            fontSize:"50px",
+            textAlign:"center",
+            marginTop:"50px",
+            fontWeight:"700"
+
+            }}>
+              Welcome To NewsMonkey
+          </p>
+        </div> */}
       </div>
     );
   }
