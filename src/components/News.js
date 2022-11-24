@@ -25,7 +25,7 @@ export class News extends Component {
       loading: true,
       page: 1,
     }
-    document.title = this.props.category;
+    document.title = `${this.props.category} - NewsMonkey`;
   }
 
   async updateNews() {
