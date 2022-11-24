@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/NewsMonkey/static/js/runtime~main.83126504.js"
   },
   {
-    "revision": "c130a59b4abb4c434ecaef054d42a5ea",
+    "revision": "1177c4d1b571d3594d049f77d0f0b8f4",
     "url": "/NewsMonkey/index.html"
   }
 ];
