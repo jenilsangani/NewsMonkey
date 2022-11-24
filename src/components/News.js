@@ -18,14 +18,14 @@ export class News extends Component {
   };
 
   articles = [];
-  constructor() {
-    super();
-    // console.log("hellow i am a constructor from news components");
+  constructor(props) {
+    super(props);
     this.state = {
       articles: this.articles,
       loading: true,
       page: 1,
-    };
+    }
+    document.title = this.props.category;
   }
 
   async updateNews() {
