@@ -17,6 +17,12 @@ export class News extends Component {
     category: PropTypes.string,
   };
 
+  // capitalizeFirstLetter function
+
+  capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase()+ string.slice(1);
+  }
+
   articles = [];
   constructor(props) {
     super(props);
@@ -24,8 +30,8 @@ export class News extends Component {
       articles: this.articles,
       loading: true,
       page: 1,
-    }
-    document.title = `${this.props.category} - NewsMonkey`;
+    };
+    document.title = `${this.capitalizeFirstLetter(this.props.category)} - NewsMonkey`;
   }
 
   async updateNews() {
