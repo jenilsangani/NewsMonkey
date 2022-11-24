@@ -13,7 +13,7 @@ function Copyright(props) {
         marginBottom:"0px",
         paddingBottom:"8px",
         paddingTop:"8px",
-        background:"black"
+        background:"lightred"
     }
     return(
         <div style={{color:props.mode === "dark" ? "white" : "black"}}>
