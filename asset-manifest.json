@@ -1,7 +1,7 @@
 {
   "main.css": "/NewsMonkey/static/css/main.e9226cd8.chunk.css",
-  "main.js": "/NewsMonkey/static/js/main.4403a89c.chunk.js",
-  "main.js.map": "/NewsMonkey/static/js/main.4403a89c.chunk.js.map",
+  "main.js": "/NewsMonkey/static/js/main.6c196d40.chunk.js",
+  "main.js.map": "/NewsMonkey/static/js/main.6c196d40.chunk.js.map",
   "static/js/1.1b3f48c6.chunk.js": "/NewsMonkey/static/js/1.1b3f48c6.chunk.js",
   "static/js/1.1b3f48c6.chunk.js.map": "/NewsMonkey/static/js/1.1b3f48c6.chunk.js.map",
   "static/js/2.e5aee40d.chunk.js": "/NewsMonkey/static/js/2.e5aee40d.chunk.js",
@@ -10,6 +10,6 @@
   "runtime~main.js.map": "/NewsMonkey/static/js/runtime~main.954f6360.js.map",
   "static/css/main.e9226cd8.chunk.css.map": "/NewsMonkey/static/css/main.e9226cd8.chunk.css.map",
   "index.html": "/NewsMonkey/index.html",
-  "precache-manifest.b31397b408252967477048a073015ee4.js": "/NewsMonkey/precache-manifest.b31397b408252967477048a073015ee4.js",
+  "precache-manifest.9314a7d688eb08b8b5097c0e8355e404.js": "/NewsMonkey/precache-manifest.9314a7d688eb08b8b5097c0e8355e404.js",
   "service-worker.js": "/NewsMonkey/service-worker.js"
 }
