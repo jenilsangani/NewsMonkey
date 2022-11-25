@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Newsitem from "./Newsitem";
 import Spinner from "./spinner";
 import PropTypes from "prop-types";
+import InfiniteScroll from "react-infinite-scroll-component";
+
 
 export class News extends Component {
   // for props value
@@ -20,19 +22,22 @@ export class News extends Component {
   // capitalizeFirstLetter function
 
   capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase()+ string.slice(1);
-  }
-
-  articles = [];
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+  
+  articles= [];
   constructor(props) {
     super(props);
     this.state = {
       articles: this.articles,
       loading: true,
       page: 1,
+      totalResults:0,
     };
 
-    document.title = `${this.capitalizeFirstLetter(this.props.category)} - NewsMonkey`;  // title change
+    document.title = `${this.capitalizeFirstLetter(
+      this.props.category
+    )} - NewsMonkey`; // title change
   }
 
   async updateNews() {
@@ -70,33 +75,44 @@ export class News extends Component {
     return (
       <>
         <div className="container my-3">
-          <h2 className="text-center" style={{ margin: "40px", fontWeight:"700" }}>
-            NewsMonkey - Top {this.capitalizeFirstLetter(this.props.category)} Headlines 
+          <h2
+            className="text-center"
+            style={{ margin: "40px", fontWeight: "700" }}
+          >
+            NewsMonkey - Top {this.capitalizeFirstLetter(this.props.category)}{" "}
+            Headlines
           </h2>
-          {this.state.loading && <Spinner />} {/* spinner component */}
-          <div className="row">
-            {this.state.articles.map((element) => {
-              return (
-                <div className="col-md-3" key={element.url}>
-                  <Newsitem
-                    title={element.title ? element.title.slice(0, 45) : ""}
-                    // title={element.title ? element.title : ""}
-                    discription={
-                      element.description
-                        ? element.description.slice(0, 60)
-                        : ""
-                    }
-                    // discription={element.description ? element.description : ""}
-                    imageUrl={element.urlToImage}
-                    newsUrl={element.url}
-                    author={element.author}
-                    date={element.publishedAt}
-                    source={element.source.name}
-                  />
-                </div>
-              );
-            })}
-          </div>
+          {/* {this.state.loading && <Spinner />} spinner component */}
+          <InfiniteScroll
+            dataLength={this.state.articles.length}
+            next={this.fetchMoreData}
+            hasMore={this.state.articles.length !== this.state.totalResults}
+            loader={<Spinner/>}
+          >
+            <div className="row">
+              {this.state.articles.map((element) => {
+                return (
+                  <div className="col-md-3" key={element.url}>
+                    <Newsitem
+                      title={element.title ? element.title.slice(0, 45) : ""}
+                      // title={element.title ? element.title : ""}
+                      discription={
+                        element.description
+                          ? element.description.slice(0, 60)
+                          : ""
+                      }
+                      // discription={element.description ? element.description : ""}
+                      imageUrl={element.urlToImage}
+                      newsUrl={element.url}
+                      author={element.author}
+                      date={element.publishedAt}
+                      source={element.source.name}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </InfiniteScroll>
           <div className="container d-flex justify-content-between">
             {/* Next btn */}
 
