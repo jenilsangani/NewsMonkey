@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Copyright from "./components/Copyright";
 
 export default class App extends Component {
-  pageSize = 15;
+  pageSize = 5;
   render() {
     return (
       <div>
