@@ -4,14 +4,20 @@ import News from "./components/News";
 import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Copyright from "./components/Copyright";
+import LoadingBar from 'react-top-loading-bar'
 
 export default class App extends Component {
-  pageSize = 5;
+  pageSize = 8;
   render() {
     return (
       <div>
         <Router>
           <NavBar />
+          <LoadingBar
+        color='#f11946'
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
           <Routes>
             <Route path="/home" element={<News key="home" pageSize={this.pageSize} country="in" category="business"/>}></Route>
             <Route path="/business" element={<News key="business" pageSize={this.pageSize} country="in" category="business"/>}></Route>
