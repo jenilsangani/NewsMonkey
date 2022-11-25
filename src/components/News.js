@@ -113,8 +113,9 @@ export class News extends Component {
               })}
             </div>
           </InfiniteScroll>
-          <div className="container d-flex justify-content-between">
-            {/* Next btn */}
+          {/* <div className="container d-flex justify-content-between">
+
+            Next btn
 
             <button
               type="button"
@@ -126,7 +127,7 @@ export class News extends Component {
               &larr; Previous
             </button>
 
-            {/* Previous Btn */}
+            Previous Btn
 
             <button
               type="button"
@@ -140,7 +141,7 @@ export class News extends Component {
             >
               Next &rarr;
             </button>
-          </div>
+          </div> */}
         </div>
       </>
     );
