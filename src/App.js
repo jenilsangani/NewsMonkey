@@ -8,21 +8,34 @@ import LoadingBar from 'react-top-loading-bar'
 
 export default class App extends Component {
   pageSize = 8;
+
+  // Loading bar
+
   state = {
     progress : 0
   }
   setProgress = (progress)=>{
     this.setState({progress: progress})
   }
+
+  // Loading bar end
+
   render() {
     return (
       <div>
         <Router>
           <NavBar />
+
+      {/* loading bar */}
+
           <LoadingBar
+          height={4}
         color='#f11946'
         progress={this.state.progress}
       />
+
+      {/* Loading bar end */}
+
           <Routes>
             <Route path="/home" element={<News setProgress={this.setProgress}  key="home" pageSize={this.pageSize} country="in" category="business"/>}></Route>
             <Route path="/business" element={<News setProgress={this.setProgress}  key="business" pageSize={this.pageSize} country="in" category="business"/>}></Route>

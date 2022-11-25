@@ -41,10 +41,12 @@ export class News extends Component {
 
   async updateNews() {
     this.props.setProgress(0);
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=fd0c45153a45406792f95f41b022afc9&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=1cdd715495b44bb090a1ca166366a72c&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
+    this.props.setProgress(40);
     let parsedData = await data.json();
+    this.props.setProgress(70);
     console.log(parsedData);
     this.setState({
       articles: parsedData.articles,
@@ -73,8 +75,8 @@ export class News extends Component {
   };
 
   fetchMoreData = async () => {
-    this.setState({page:this.state.page + 1})
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=5b4fc8031cef4d51bba8791b2755a506&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    this.setState({ page: this.state.page + 1 });
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=1cdd715495b44bb090a1ca166366a72c&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     // this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -97,7 +99,7 @@ export class News extends Component {
             NewsMonkey - Top {this.capitalizeFirstLetter(this.props.category)}{" "}
             Headlines
           </h2>
-           {this.state.loading && <Spinner />} {/*spinner component */}
+          {this.state.loading && <Spinner />} {/*spinner component */}
           <InfiniteScroll
             dataLength={this.state.articles.length}
             next={this.fetchMoreData}
@@ -105,34 +107,32 @@ export class News extends Component {
             loader={<Spinner />}
           >
             <div className="container">
-            <div className="row">
-              {this.state.articles.map((element) => {
-                return (
-                  <div className="col-md-3" key={element.url}>
-                    <Newsitem
-                      title={element.title ? element.title.slice(0, 45) : ""}
-                      // title={element.title ? element.title : ""}
-                      discription={
-                        element.description
-                          ? element.description.slice(0, 60)
-                          : ""
-                      }
-                      // discription={element.description ? element.description : ""}
-                      imageUrl={element.urlToImage}
-                      newsUrl={element.url}
-                      author={element.author}
-                      date={element.publishedAt}
-                      source={element.source.name}
-                    />
-                  </div>
-                );
-              })}
-            </div>
+              <div className="row">
+                {this.state.articles.map((element) => {
+                  return (
+                    <div className="col-md-3" key={element.url}>
+                      <Newsitem
+                        title={element.title ? element.title.slice(0, 45) : ""}
+                        // title={element.title ? element.title : ""}
+                        discription={
+                          element.description
+                            ? element.description.slice(0, 60)
+                            : ""
+                        }
+                        // discription={element.description ? element.description : ""}
+                        imageUrl={element.urlToImage}
+                        newsUrl={element.url}
+                        author={element.author}
+                        date={element.publishedAt}
+                        source={element.source.name}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </InfiniteScroll>
-
           {/* Next & Previous btn */}
-
           {/* <div className="container d-flex justify-content-between">
 
             Next btn
@@ -162,10 +162,6 @@ export class News extends Component {
               Next &rarr;
             </button>
           </div> */}
-
-          
-          
-          
         </div>
       </>
     );

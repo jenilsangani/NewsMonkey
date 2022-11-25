@@ -6,7 +6,14 @@ export class Newsitem extends Component {
     return (
       <div className="my-3">
         <div className="card">
-        <span className=" translate-middle badge rounded-pill bg-secondary" style={{display:'flex', alignSelf:'center', zIndex:'1'}}> {source} </span>
+          <div style={{
+            display:'flex',
+            justifyContent : 'flex-end',
+            position:'absolute',
+            right:'0'
+          }}>
+        <span className=" badge rounded-pill bg-secondary"> {source} </span>
+          </div>
           <img src={ !imageUrl ? "https://img.etimg.com/thumb/msid-95591033,width-1070,height-580,imgsize-45264,overlay-etmarkets/photo.jpg" : imageUrl}className="card-img-top"alt="..."/>
           <div className="card-body">
             <h5 className="card-title">{title} ...</h5>
