@@ -73,7 +73,7 @@ export class News extends Component {
   fetchMoreData = async () => {
     this.setState({page:this.state.page + 1})
     const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=5b4fc8031cef4d51bba8791b2755a506&page=${this.state.page}&pageSize=${this.props.pageSize}`;
-    this.setState({ loading: true });
+    // this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
     console.log(parsedData);
@@ -95,7 +95,7 @@ export class News extends Component {
             NewsMonkey - Top {this.capitalizeFirstLetter(this.props.category)}{" "}
             Headlines
           </h2>
-          {/* {this.state.loading && <Spinner />} spinner component */}
+           {this.state.loading && <Spinner />} {/*spinner component */}
           <InfiniteScroll
             dataLength={this.state.articles.length}
             next={this.fetchMoreData}
