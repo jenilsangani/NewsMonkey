@@ -12,7 +12,7 @@ export class Newsitem extends Component {
             position:'absolute',
             right:'0'
           }}>
-        <span className=" badge rounded-pill bg-secondary"> {source} </span>
+        <span className=" badge rounded-pill bg-danger"> {source} </span>
           </div>
           <img src={ !imageUrl ? "https://img.etimg.com/thumb/msid-95591033,width-1070,height-580,imgsize-45264,overlay-etmarkets/photo.jpg" : imageUrl}className="card-img-top"alt="..."/>
           <div className="card-body">
