@@ -23,7 +23,7 @@ const News = (props) => {
   // )} - NewsMonkey`; // title change
 
   const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(1);
 
@@ -94,7 +94,7 @@ const News = (props) => {
           <div className="container">
             <div className="row">
               {articles.map((element) => {
-                return (
+                return ( 
                   <div className="col-md-3" key={element.url}>
                     <Newsitem
                       title={element.title ? element.title.slice(0, 45) : ""}
