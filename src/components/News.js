@@ -49,7 +49,7 @@ const News = (props) => {
 
   useEffect(() => {
     updateNews();
-    // eslint-disable-next-line
+    // eslint-disable-next-line no-use-before-define
   }, []);
 
   // // Previous btn function

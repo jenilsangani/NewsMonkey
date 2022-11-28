@@ -1,7 +1,7 @@
 import "./App.css";
 import NavBar from "./components/NavBar";
 import News from "./components/News";
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Copyright from "./components/Copyright";
 import LoadingBar from 'react-top-loading-bar'
