@@ -23,7 +23,7 @@ const News = (props) => {
   // )} - NewsMonkey`; // title change
 
   const [articles, setArticles] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(1);
 
@@ -80,7 +80,7 @@ const News = (props) => {
       <div className="container my-3">
         <h2
           className="text-center"
-          style={{ margin: "40px", fontWeight: "700" }}
+          style={{fontWeight: "700",marginTop:'90px',marginBottom:'25px' }}
         >
           NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines
         </h2>
@@ -94,7 +94,7 @@ const News = (props) => {
           <div className="container">
             <div className="row">
               {articles.map((element) => {
-                return ( 
+                return (
                   <div className="col-md-3" key={element.url}>
                     <Newsitem
                       title={element.title ? element.title.slice(0, 45) : ""}
