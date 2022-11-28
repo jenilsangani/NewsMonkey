@@ -49,6 +49,7 @@ const News = (props) => {
 
   useEffect(() => {
     updateNews();
+    // eslint-disable-next-line
   }, []);
 
   // // Previous btn function
@@ -66,8 +67,8 @@ const News = (props) => {
   // };
 
   const fetchMoreData = async () => {
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apikey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
     setPage(page + 1);
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apikey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
     // setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -151,6 +152,6 @@ const News = (props) => {
     </>
   );
 };
-console.log(Spinner);
+// console.log(Spinner);
 
 export default News;
